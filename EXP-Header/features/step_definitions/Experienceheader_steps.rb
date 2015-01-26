@@ -23,50 +23,50 @@ When (/^I click on browser back button$/) do
     page.evaluate_script('window.history.back()')
 	end 
 
-When(/^I click on 'Experience' logo$/) do
+And(/^I click on 'Experience' logo$/) do
  
   find(".experience-logo").click
 end 
 
 
-When(/^I select'Find My Experience'front$/) do
+When(/^I select'Find My Experience' front$/) do
     page.driver.browser.manage.window.maximize
     @expected_FE =find(".nav-bar.navigation").find(".nav-find-experience").find("a")["href"] 
    find(".nav-bar.navigation").find(".nav-find-experience").find("a").click
 
 end
-Then(/^'Find My Experience'front should dispaly$/) do
+Then(/^'Find My Experience' front should dispaly$/) do
     expect(current_url).to match @expected_FE
     page.evaluate_script('window.history.back()')
 end
 
 
-When(/^I select'Best Beaches'front$/) do
+When(/^I select'Best Beaches' front$/) do
   @expected_BB =find(".nav-bar.navigation").find(".nav-best-beaches").find("a")["href"] 
    find(".nav-bar.navigation").find(".nav-best-beaches").find("a").click
 end
 
-Then(/^'Best Beaches'front should dispaly$/) do
+Then(/^'Best Beaches' front should dispaly$/) do
     expect(current_url).to match @expected_BB
     page.evaluate_script('window.history.back()')
 end
 
-When(/^I select'Best Photos'front$/) do
+When(/^I select'Best Photos' front$/) do
   @expected_BP =find(".nav-bar.navigation").find(".nav-Beach.Photos").find("a")["href"] 
    find(".nav-bar.navigation").find(".nav-Beach.Photos").find("a").click
 end
 
-Then(/^'Best Photos'front should dispaly$/) do
+Then(/^'Best Photos' front should dispaly$/) do
    expect(current_url).to match @expected_BP
     page.evaluate_script('window.history.back()')
 end
 
-When(/^I select'Free Beach Quotes'front$/) do
+When(/^I select'Free Beach Quotes' front$/) do
   @expected_FQ =find(".nav-bar.navigation").find(".nav-connect").find("a")["href"] 
    find(".nav-bar.navigation").find(".nav-connect").find("a").click
 end
 
-Then(/^'Free Beach Quotes'front should dispaly$/) do
+Then(/^'Free Beach Quotes' front should dispaly$/) do
   first_window= page.driver.browser.window_handles.first
 
   new_window = page.driver.browser.window_handles.last
@@ -77,7 +77,7 @@ Then(/^'Free Beach Quotes'front should dispaly$/) do
 
    page.driver.browser.switch_to.window first_window
 end
-@ExpTopdestination
+#ExpTopdestination
 
 When(/^I mouse hover Top destination$/) do
   page.driver.browser.manage.window.maximize
